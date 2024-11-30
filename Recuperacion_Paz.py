@@ -73,7 +73,7 @@ CLAVE_PROVISORIA = "Recuperacion2024."
 
 def recuperar_contraseña(usuario,correo):
     arch_recuperacion = open("recuperacion.csv","w")
-    arch_recuperacion.write(f"Correo enviado a {correo} \n Haz solicitado la recuperacion de tu contraseña, utiliza esta contraseña provisoria para poder acceder con tu usuario{CLAVE_PROVISORIA}")
+    arch_recuperacion.write(f"Correo enviado a {correo} \n Haz solicitado la recuperacion de tu contraseña, utiliza esta contraseña provisoria para poder acceder con tu usuario {CLAVE_PROVISORIA}")
     arch_recuperacion.close()
     messagebox.showinfo("Recuperar contraseña",f"Se ha enviado un correo a tu cuenta {correo}")
 

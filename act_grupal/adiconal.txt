@@ -1,0 +1,47 @@
+*arriba va lo que hicimos antes para la ventana principal*
+
+  boton_registrar = Button(frame_botones, text="Registrar nuevo usuario", command=ventana_registrar_nuevo_usuario)
+    boton_registrar.grid(row=0, column=1, padx=10)
+
+
+*siguen las funciones de obtener_claves y validar_datos*
+
+
+
+------Esto es lo nuevo------
+
+def ventana_registrar_nuevo_usuario():
+    nueva_ventana = Toplevel()
+    nueva_ventana.title("Registrar nuevo usuario")
+    nueva_ventana.resizable(False,False)
+    nueva_ventana.geometry("300x130")
+    nueva_ventana.configure(bg="lightblue")
+
+    etiqueta_nuevo_usuario = Label(nueva_ventana, text="Nuevo usuario: ", fg="white", bg="black")
+    etiqueta_nuevo_usuario.grid(row=0, column=0, sticky="E")
+    etiqueta_nueva_contraseña = Label(nueva_ventana, text="Clave: ", fg="white", bg="black")
+    etiqueta_nueva_contraseña.grid(row=1, column=0, sticky="E")
+    
+    cuadro_nuevo_usuario = Entry(nueva_ventana)
+    cuadro_nuevo_usuario.grid(row=0, column=1, padx=10,pady=10)
+    cuadro_nueva_contraseña = Entry(nueva_ventana, show="*")
+    cuadro_nueva_contraseña.grid(row=1, column=1, padx=10,pady=10)
+    
+    boton_registrar_nuevo_usuario = Button(nueva_ventana, text="Nuevo usuario", command=lambda: registrar_usuario(cuadro_nuevo_usuario, cuadro_nueva_contraseña, nueva_ventana))
+    boton_registrar_nuevo_usuario.grid(row=2, column=1, padx=5)
+
+
+def registrar_usuario(cuadro_nuevo_usuario, cuadro_nueva_contraseña, ventana):
+    dicc = obtener_usuarios_claves()
+    nuevo_usuario = cuadro_nuevo_usuario.get()
+    nueva_contraseña = cuadro_nueva_contraseña.get()
+
+    if nuevo_usuario in dicc:
+        messagebox.showerror("Error", "El usuario ya existe")
+    elif not nuevo_usuario or not nueva_contraseña:
+        messagebox.showerror("Error", "Debes completar ambos campos")
+    else:
+        dicc[nuevo_usuario] = nueva_contraseña
+        messagebox.showinfo("Exito","El usuario fue agregado con exito")
+        ventana.destroy()
+ 
