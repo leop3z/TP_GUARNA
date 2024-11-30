@@ -1,0 +1,23 @@
+Debes tomar como enunciado, la Actividad Grupal de Interfaces Gráficas que se encuentra en la pestaña 
+correspondiente, dentro de la solapa "Actividades", y cumplir con los 4 objetivos + el objetivo adicional. 
+A esto deberás agregarle que:
+
+1 - Además del nombre del usuario y la clave, el usuario deberá registrar su dirección de email. 
+Se deberá controlar que la misma tenga una longitud de entre 10 y 25 caracteres, que sólo haya una @, 
+que sólo contenga letras, números y signos tales como "_", "-", ".", ningún otro signo. Además los dominios 
+posibles son fi.uba.ar, gmail.com, uba.ar.
+
+2 - Los datos de los usuarios (nombre de usuario, email y clave) se deben preservar en un archivo csv.
+
+3 - La clave de los usuarios debe cumplir con las siguientes condiciones:
+      a. Tener como mínimo 6 y como máximo 10 caracteres
+      b. Estar compuesta al menos por una letra mayúscula, una minúscula y un número
+      c. Contener al menos uno de los siguientes caracteres: "-", "_", "."
+      d. No puede haber caracteres adyacentes repetidos
+       La evaluación debe estar resuelta de forma eficiente.
+
+4 - Debes agregar un botón que permita al usuario recuperar su clave si se la ha olvidado, para lo cual,
+en caso que el usuario elija este método, deberán simular que se envía un mail a su casilla de correo.
+
+La simulación consta en asentar en un archivo CSV, el texto con una clave provisoria.
+En consecuencia, si el usuario ingresa con esta clave, deberás exigirle que haga un cambio de clave.
